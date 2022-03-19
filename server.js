@@ -22,10 +22,13 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 
-  app.get('/', (req, res) => {
-      res.json({
-          message: 'Hello, Mamani'
-      });
+//   app.get('/', (req, res) => {
+//       res.json({
+//           message: 'Hello, Mamani'
+//       });
+//   });
+  db.query(`SELECT * FROM candidates`, (err, rows) => {
+      console.log(rows);
   });
   // Default response for any other request (Not Found)
 app.use((req, res) => {
